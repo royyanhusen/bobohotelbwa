@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('hotel_photos', function (Blueprint $table) {
             $table->id();
+            $table->string('photo');
+            $table->foreignId('hotel_id')->constrained()->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

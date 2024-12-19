@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('hotel_bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('proof');
+            $table->date('checkin_at');
+            $table->date('checkout_at');
+            $table->unsignedInteger('total_days');
+            $table->unsignedInteger('total_amount');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('hotel_id')->constrained()->onDelete('cascade');
+            $table->boolean('is_paid');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
