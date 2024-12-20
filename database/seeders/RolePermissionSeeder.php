@@ -25,12 +25,12 @@ class RolePermissionSeeder extends Seeder
         ];
 
         foreach($permissions as $perm) {
-            Permission::firsOrCreate([
-                'name' => $perm
+            Permission::firstOrCreate([
+                'name' => $perm,
             ]);
         }
 
-        $customerRole = Role::firsOrCreate([
+        $customerRole = Role::firstOrCreate([
             'name' => 'customer',
         ]);
 
@@ -41,12 +41,12 @@ class RolePermissionSeeder extends Seeder
 
         $customerRole->syncPermissions($customerPermissions);
 
-        $superAdminRole = Role::firsOrCreate([
+        $superAdminRole = Role::firstOrCreate([
             'name' => 'super_admin',
         ]);
 
         $user = User::create([
-            'name' => 'super_admin',
+            'name' => 'Super Admin',
             'email' => 'super@admin.com',
             'avatar' => 'images/dummyavatar.png',
             'password' => bcrypt('123qwe123'),
