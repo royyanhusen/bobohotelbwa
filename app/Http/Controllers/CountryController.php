@@ -36,7 +36,7 @@ class CountryController extends Controller
             $validated['slug'] = Str::slug($validated['name']);
             $newCountry = Country::create($validated);
         });
-        return redirect()->route('admin.countries.index');
+        return redirect()->route('admin.countries.index' );
     }
 
     /**

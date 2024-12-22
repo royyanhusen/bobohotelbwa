@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('thumbnail');
             $table->string('address');
-            $table->unsignedBigInteger('start_level');
+            $table->unsignedBigInteger('star_level');
             $table->string('link_gmaps');
             $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');

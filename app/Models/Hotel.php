@@ -19,7 +19,7 @@ class Hotel extends Model
         'slug',
         'country_id',
         'address',
-        'start_level',
+        'star_level',
     ];
 
     public function city() {
@@ -38,7 +38,7 @@ class Hotel extends Model
         return $this->hasMany(HotelRoom::class);
     }
 
-    public function getLowestRoom() {
+    public function getLowestRoomPrice() {
         $minPrice = $this->rooms()->min('price');
         return $minPrice ?? 0;
     }

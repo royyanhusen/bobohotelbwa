@@ -26,7 +26,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        $countries = Country::oderByDesc('id')->get();
+        $countries = Country::orderByDesc('id')->get();
         $cities = City::orderByDesc('id')->get();
         return view('admin.hotels.create', compact('countries', 'cities'));
     }
@@ -41,7 +41,7 @@ class HotelController extends Controller
 
             if ($request->hasFile('thumbnail')) {
                 $thumbnailPath =
-                    $request->file('thumbnail')->store('thumbnail/' . date('Y/m/d'), 'public');
+                    $request->file('thumbnail')->store('thumbnails/' . date('Y/m/d'), 'public');
                 $validated['thumbnail'] = $thumbnailPath;
             }
 
