@@ -23,7 +23,7 @@ class StoreRoomRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'photos' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'photo' => ['required', 'image', 'mimes:png,jpg,jpeg'],
             'total_people' => ['required', 'integer'],
             'price' => ['required', 'integer'],
         ];

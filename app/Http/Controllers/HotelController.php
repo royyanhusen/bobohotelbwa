@@ -51,7 +51,7 @@ class HotelController extends Controller
 
             if ($request->hasFile('photos')) {
                 foreach ($request->file('photos') as $photo) {
-                    $photoPath = $photo->store('photos/' . date('Y-m-d'), 'public');
+                    $photoPath = $photo->store('photos/' . date('Y/m/d'), 'public');
                     
                     $hotel->photos()->create([
                         'photo' => $photoPath
