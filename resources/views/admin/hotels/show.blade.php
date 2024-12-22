@@ -14,26 +14,26 @@
 
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
-                        <img src=" " alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
+                        <img src="{{ Storage::url($hotel->thumbnail) }}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
                         <div class="flex flex-col">
                             <h3 class="text-indigo-950 text-xl font-bold">
-                                asdsadsaasd
+                                {{ $hotel->name }}
                             </h3>
                         <p class="text-slate-500 text-sm">
-                            asdasdsa, qweqweqwe
+                            {{ $hotel->city->name }}, {{ $hotel->country->name }}
                         </p>
                         </div>
                     </div> 
                     <div  class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Price</p>
                         <h3 class="text-indigo-950 text-xl font-bold">
-                            Rp0/night
+                            Rp {{ number_format($hotel->getLowestRoomPrice(), 0, ',', '.') }}/night
                         </h3>
                     </div>
                     <div  class="hidden md:flex flex-col">
                         <p class="text-slate-500 text-sm">Star</p>
                         <h3 class="text-indigo-950 text-xl font-bold">
-                            3 star
+                            {{ $hotel->star_level }} star
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-row items-center gap-x-3">
@@ -51,15 +51,20 @@
                 <hr class="my-5">
                 <h3 class="text-indigo-950 text-xl font-bold">Gallery Photos</h3>
 
+                @foreach ($latestPhotos as $photo)
+
                 <div class="flex flex-row gap-x-5"> 
-                        <img src=" " alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
+                        <img src="{{ Storage::url($photo->photo) }} " alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
                      
                 </div>
+                    
+                @endforeach
 
                 <div>
+                    <iframe src="https://www.google.com/maps/embed?{{ $hotel->link_gmaps }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h3 class="text-indigo-950 text-xl font-bold">Address</h3>
                 <p>
-                    asdasdsa qweqw q12
+                    {{ $hotel->address }}
                 </p>
                 </div>
 
