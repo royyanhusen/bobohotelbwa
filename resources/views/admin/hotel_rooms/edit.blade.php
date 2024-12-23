@@ -31,29 +31,29 @@
                     
                     <div>
                         <x-input-label for="name" :value="__('Name')" />
-                        <x-text-input id="name"  value="{{ $hotelRoom->name }}" class="block mt-1 w-full" type="text" name="name" 
-                         required autofocus autocomplete="name" />
+                        <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" 
+                        value="{{ $hotelRoom->name }}"  required autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
                         <x-input-label for="photo" :value="__('photo')" />
                         <img src="{{ Storage::url($hotelRoom->photo) }}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
-                        <x-text-input id="photo" class="block mt-1 w-full" type="file" name="photo" autofocus autocomplete="photo" />
+                        <x-text-input id="photo" class="block mt-1 w-full" type="file" name="photo" required autofocus autocomplete="photo" />
                         <x-input-error :messages="$errors->get('photo')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
                         <x-input-label for="price" :value="__('price')" />
-                        <x-text-input id="price" value="{{ $hotelRoom->price }}" class="block mt-1 w-full" type="number" name="price" 
-                         required autofocus autocomplete="price" />
+                        <x-text-input id="price" class="block mt-1 w-full" type="number" name="price" 
+                        value="{{ $hotelRoom->price }}" required autofocus autocomplete="price" />
                         <x-input-error :messages="$errors->get('price')" class="mt-2" />
                     </div>
 
                     <div class="mt-4">
                         <x-input-label for="total_people" :value="__('total_people')" />
-                        <x-text-input id="total_people" value="{{ $hotelRoom->total_people }}" class="block mt-1 w-full" type="number" name="total_people" 
-                         required autofocus autocomplete="total_people" />
+                        <x-text-input id="total_people" class="block mt-1 w-full" type="number" name="total_people" 
+                        value="{{ $hotelRoom->total_people }}" required autofocus autocomplete="total_people" />
                         <x-input-error :messages="$errors->get('total_people')" class="mt-2" />
                     </div>
 

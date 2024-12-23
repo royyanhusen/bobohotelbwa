@@ -36,10 +36,12 @@
                         </h3>
                     </div>
                     <div class="hidden md:flex flex-row items-center gap-x-3">
-                        <a href=" " class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+                        <a href="{{ route('admin.hotels.edit', $hotel) }}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                             Edit
                         </a>
-                        <form action=" " method="POST"> 
+                        <form action="{{ route('admin.hotels.destroy', $hotel) }}" method="POST"> 
+                            @csrf
+                            @method('DELETE')
                             <button type="submit" class="font-bold py-4 px-6 bg-red-700 text-white rounded-full">
                                 Delete
                             </button>
@@ -75,7 +77,6 @@
                     </a>
                 </div>
                 @forelse ($hotel->rooms as $room)
-                {{-- {{ dd($room) }} --}}
 
                 <div class="item-card flex flex-row justify-between items-center">
                     <div class="flex flex-row items-center gap-x-3">
