@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('link_gmaps');
             $table->foreignId('city_id')->constrained()->onDelete('cascade');
             $table->foreignId('country_id')->constrained()->onDelete('cascade');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
