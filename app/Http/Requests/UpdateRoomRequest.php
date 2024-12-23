@@ -11,7 +11,7 @@ class UpdateRoomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,7 @@ class UpdateRoomRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'photos' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
+            'photo' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
             'total_people' => ['required', 'integer'],
             'price' => ['required', 'integer'],
         ];
