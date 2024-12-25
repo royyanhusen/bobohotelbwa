@@ -23,8 +23,8 @@ class StoreSearcHotelRequest extends FormRequest
     {
         return [
             'keyword' => ['required', 'string', 'max:255'],
-            'checkin_at' => ['required', 'integer'],
-            'checkout_at' => ['required', 'integer'],
+            'checkin_at' => ['required', 'date'],
+            'checkout_at' => ['required', 'date', 'after:today'],
         ];
     }
 }
