@@ -7,13 +7,14 @@
         </div>
         <div class="relative z-10 px-[18px] flex flex-col gap-6 mt-[60px]">
             <div class="top-menu flex justify-between items-center">
-                <a href="index.html" class="">
+                <a href="{{ route('front.index') }}" class="">
                     <div class="w-[42px] h-[42px] flex shrink-0">
                         <img src="assets/images/icons/back.svg" alt="icon">
                     </div>
                 </a>
             </div>
-            <form action="hotel-result.html" class="bg-white p-4 flex flex-col gap-6 rounded-xl">
+            <form method="POST" action="{{ route('front.search.hotels') }}" class="bg-white p-4 flex flex-col gap-6 rounded-xl">
+                @csrf
                 <div class="input-container flex flex-col gap-4">
                     <p class="font-semibold">Search Hotel</p>
                     <div

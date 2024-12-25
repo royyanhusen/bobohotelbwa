@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSearcHotelRequest;
 use App\Models\Hotel;
-use Illuminate\Http\Request;
 
 class FrontController extends Controller
 {
@@ -36,12 +35,13 @@ class FrontController extends Controller
             ->whereHas('country', function ($query) use ($keyword) {
                 $query->where('name', 'like', '%' . $keyword  . '%');
             })
+
             ->orWhereHas('city', function ($query) use ($keyword) {
                 $query->where('name', 'like', '%' . $keyword  . '%');
             })
             ->orWhere('name', 'like', '%' . $keyword  . '%')
             ->get();
 
-        return redirect()->route('front.list_hotels', compact('hotels', 'keyword'));
+        return view('front.list_hotels', compact('hotels', 'keyword'));
     }
 }
