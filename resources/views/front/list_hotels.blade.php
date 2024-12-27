@@ -17,11 +17,11 @@
             </div>
             @forelse ($hotels as $hotel)
                 <div id="result" class="result-card-container flex flex-col gap-[18px]">
-                    <a href="hotel-details.html">
+                    <a href="{{ route('front.hotels.details', $hotel) }}">
                         <div class="card-result bg-white rounded-xl overflow-hidden flex flex-col">
                             <div class="thumbnail-container w-full aspect-[357/160] overflow-hidden flex shrink-0">
-                                <img src="{{ Storage::url($hotel->thumbnail) }}"
-                                    class="object-cover w-full h-full" alt="thumbnail">
+                                <img src="{{ Storage::url($hotel->thumbnail) }}" class="object-cover w-full h-full"
+                                    alt="thumbnail">
                             </div>
                             <div class="content-container flex flex-col p-4 gap-6">
                                 <div class="details-container flex flex-col gap-[6px]">
@@ -84,7 +84,16 @@
                     </a>
 
                 @empty
-                    <p>Belum ada hotels saat ini </p>
+                    <div id="result" class="result-card-container flex flex-col gap-[18px]">
+                        <div
+                            class="empty-result h-[321px] bg-white rounded-xl overflow-hidden flex flex-col justify-center items-center gap-3">
+                            <div class="flex shrink-0 w-9 h-9">
+                                <img src="{{ asset('assets/images/icons/emoticon.png') }}" alt="icon">
+                            </div>
+                            <p class="font-medium text-[#757C98] text-center">Sadly, it looks like no hotels
+                                are<br>available around here.</p>
+                        </div>
+                    </div>
             @endforelse
         </div>
         </div>
