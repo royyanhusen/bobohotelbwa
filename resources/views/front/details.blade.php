@@ -278,7 +278,7 @@
                     </p>
                     <p class="font-semibold text-xs leading-[18px] text-[#757C98]">/night</p>
                 </div>
-                <a href="{{ route('front.rooms', $hotel->slug) }}"
+                <a href="{{ route('front.hotels.rooms', $hotel->slug) }}"
                     class="w-[138px] h-[48px] bg-[#4041DA] p-[12px_24px] rounded-full text-nowrap text-white font-semibold text-sm leading-[21px] flex items-center justify-center">Select
                     Room</a>
             </div>
