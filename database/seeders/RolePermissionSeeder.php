@@ -20,7 +20,7 @@ class RolePermissionSeeder extends Seeder
             'manage cities',
             'manage hotel bookings',
             'manage hotels',
-            'check hotels',
+            'checkout hotels',
             'view hotel bookings',
         ];
 
@@ -35,7 +35,7 @@ class RolePermissionSeeder extends Seeder
         ]);
 
         $customerPermissions = [
-            'check hotels',
+            'checkout hotels',
             'view hotel bookings',
         ];
 
