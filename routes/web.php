@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\HotelBookingController;
 use App\Http\Controllers\HotelController;
@@ -30,6 +31,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/book/payment/{hotel_booking}/', [FrontController::class, 'hotel_payment'])->name('front.hotel.book.payment');
         Route::put('/book/payment/{hotel_booking}/store', [FrontController::class, 'hotel_payment_store'])->name('front.hotel.book.payment.store');
         Route::get('/book/finish/', [FrontController::class, 'hotel_book_finish'])->name('front.book_finish');
+    });
+
+    Route::middleware('can:view hotel bookings')->group(function() {
+        Route::get('/dashboard/my-bookings', [DashboardController::class, 'my_bookings'])->name('dashboard.my-bookings');
     });
 
     Route::prefix('admin')->name('admin.')->group(function() {
