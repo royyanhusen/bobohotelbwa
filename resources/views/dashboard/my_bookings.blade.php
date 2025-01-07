@@ -20,8 +20,8 @@
                             <div class="flex flex-col gap-[2px]">
                                 @if ($booking->is_paid)
                                     <p class="font-semibold">Booking Success</p>
-                                    <p class="font-semibold">Waiting for Confirmation</p>
                                 @else
+                                <p class="font-semibold">Waiting for Confirmation</p>
                                 @endif
                                 <p class="font-medium text-xs leading-[18px] text-[#757C98]">Order ID : {{ $booking->id }}
                                 </p>
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="order-details-pending.html"
+                        <a href="{{ route('dashboard.booking_details', $booking) }}"
                             class="flex items-center justify-center font-semibold p-[12px_24px] rounded-lg h-12 bg-[#4041DA17] text-[#4041DA] m-4 mt-0">Booking
                             Details</a>
                     </div>
@@ -111,7 +111,7 @@
                         <p class="text-xs leading-[18px] font-medium text-[#757C98]">Search</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ route('dashboard.my-bookings') }}">
                     <div class="flex flex-col gap-1 items-center">
                         <div class="w-6 h-6 flex shrink-0">
                             <img src="{{ asset('assets/images/icons/activity-active.svg') }}" alt="icon">
@@ -119,7 +119,7 @@
                         <p class="text-xs leading-[18px] font-medium text-[#4041DA]">Activity</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="{{ route('dashboard') }}">
                     <div class="flex flex-col gap-1 items-center">
                         <div class="w-6 h-6 flex shrink-0">
                             <img src="{{ asset('assets/images/icons/settings-nonactive.svg') }}" alt="icon">

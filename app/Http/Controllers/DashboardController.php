@@ -13,4 +13,8 @@ class DashboardController extends Controller
         $mybookings = HotelBooking::with(['room', 'hotel'])->where('user_id', $user->id)->latest()->get();
         return view('dashboard.my_bookings', compact('mybookings'));
     }
+
+    public function booking_details(HotelBooking $hotelBooking) {
+        return view('dashboard.booking_details', compact('hotelBooking'));
+    }
 }

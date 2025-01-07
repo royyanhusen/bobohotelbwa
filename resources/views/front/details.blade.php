@@ -29,7 +29,8 @@
                     <div id="Hotel-rating" class="flex items-center gap-[6px]">
                         <div
                             class="badge rounded-md p-[6px_12px] gap-[2px] bg-[linear-gradient(244.6deg,_#7545FB_14.17%,_#2A3FCC_92.43%)] text-[#F8F8F8] font-semibold text-sm leading-[21px]">
-                            {{ $hotel->star_level }}</div>
+                            {{ $hotel->star_level }} Star Hotel
+                        </div>
                         <div class="ratings-container flex items-center gap-1">
                             <div class="star-container flex items-center">
                                 <div class="flex shrink-0 w-[18px] h-[18px] p-[2px]">
