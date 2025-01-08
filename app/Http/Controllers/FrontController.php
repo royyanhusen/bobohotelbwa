@@ -125,4 +125,9 @@ class FrontController extends Controller
         });
         return redirect()->route('front.book_finish');
     }
+
+    public function hotel_book_finish()
+    {
+        return view('front.book_finish');
+    }
 }
